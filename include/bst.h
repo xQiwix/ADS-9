@@ -5,13 +5,13 @@ template <typename T>
 class BST {
  private:
   struct X {
- T value;
+T value;
     int count;
- X* left;
- X* right;
+X* left;
+X* right;
   };
- X* root;
- X* addX(X*, T);
+X* root;
+X* addX(X*, T);
   int serchtree(X*, T);
   int depthtree(X*);
  public:
@@ -23,13 +23,13 @@ class BST {
 
 template <typename T>
 BST<T>::BST() {
- root = nullptr;
+root = nullptr;
 }
 
 template <typename T>
 typename BST<T>::X* BST<T>::addX(X* root, T value) {
   if (root == nullptr) {
- root = new X;
+root = new X;
     root->value = value;
     root->count = 1;
     root->left = root->right = nullptr;
