@@ -13,12 +13,12 @@ class BST {
  X* root;
  X* addX(X*, T);
   int serchtree(X*, T);
-  int dpthtree(X*);
+  int depthtree(X*);
  public:
   BST();
   void add(T);
   int search(T);
-  int dpth();
+  int depth();
 };
 
 template <typename T>
@@ -67,11 +67,11 @@ int BST<T>::search(T value) {
 }
 
 template <typename T>
-int BST<T>::dpthtree(X* root) {
+int BST<T>::depthtree(X* root) {
   if (root == nullptr)
     return 0;
-  int hleft = dpthtree(root->left);
-  int hright = dpthtree(root->right);
+  int hleft = depthtree(root->left);
+  int hright = depthtree(root->right);
   if (hleft > hright) {
     return hleft + 1;
   } else {
@@ -80,8 +80,8 @@ int BST<T>::dpthtree(X* root) {
 }
 
 template <typename T>
-int BST<T>::dpth() {
-  return dpthtree(root) - 1;
+int BST<T>::depth() {
+  return depthtree(root) - 1;
 }
 
 #endif  // INCLUDE_BST_H_
